@@ -1,0 +1,7 @@
+<div class="row bg-color-grid-title m-0 p-0">
+    <ng-container *ngFor="let fieldLabel of section[getSectionName(section)].fieldTitleLabels">
+      <div [class]=fieldLabel.cssClass>
+        <h6>{{fieldLabel.name}}</h6>
+      </div>
+    </ng-container>
+  </div>

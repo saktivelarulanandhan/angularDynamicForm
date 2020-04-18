@@ -1,0 +1,47 @@
+
+    <div class="row  m-0 pt-2 custom-field">
+        <div class="col-md-4"><i *ngIf="groups && groups.length !== 0"
+                [ngClass]="{'fa-plus-square-o': !field.isExpand, 'fa-minus-square-o': field.isExpand}"
+                class="fa fa-plus-square-o mr-2 custom-square" aria-hidden="true"
+                (click)="field.isExpand = !field.isExpand"></i><label class="field-label">{{field.name}}</label></div>
+        <div class="col-md-3">
+            <ng-container *ngIf="field.elementType === 'sl' && field.readWrite">
+                <select class="field-element" name="formSelectValue" [(ngModel)]="field.onLoad">
+                    <option *ngFor="let option of field.selectOptions" [value]="option.key">{{option.value}}</option>
+                </select>
+            </ng-container>
+            <ng-container *ngIf="!field.readWrite">
+                <label class="field-label">{{loadDefault(field)}}</label>
+            </ng-container>
+        </div>
+        <div class="col-md-3">
+            <ng-container *ngIf="field.defaultOptions && field.defaultOptions.type === 'label'">
+                <label class="field-label">{{field.defaultOptions.value}}</label>
+            </ng-container>
+            <ng-container *ngIf="field.defaultOptions && field.defaultOptions.type === 'sl'">
+                <select class="field-element" name="formSelectValue" [(ngModel)]="field.defaultOptions.onLoad">
+                    <option *ngFor="let option of field.defaultOptions.selectOptions" [value]="option.key">
+                        {{option.value}}
+                    </option>
+                </select>
+
+            </ng-container>
+            <ng-container *ngIf="field.defaultOptions && field.defaultOptions.type === 'ch'">
+                <ng-multiselect-dropdown [placeholder]="'select any value...'"
+                    [data]="field.defaultOptions.checkOptions" [(ngModel)]="field.defaultOptions.onLoad"
+                    [settings]="dropdownSettings">
+                </ng-multiselect-dropdown>
+
+                <!--   <div class="col-md-10 p-2 m-2" style="background-color:#fff;border:1px solid #ccc">
+              <div class="form-check field-label m-1" *ngFor="let check of field.defaultOptions.checkOptions">
+                <input type="checkbox" class="form-check-input" [checked]="check.state" [id]="check.id">
+                <label class="form-check-label" [for]="check.id">{{check.label}}</label>
+              </div>
+            </div> -->
+            </ng-container>
+
+        </div>
+        <div class="col-md-2"><a data-toggle="tooltip" title="Some tooltip text!"><i class="fa fa-info-circle" aria-hidden="true"></i></a> / <a data-toggle="tooltip" title="Some tooltip text!"><i class="fa fa-question-circle"
+            aria-hidden="true"></i></a></div>
+
+    </div>

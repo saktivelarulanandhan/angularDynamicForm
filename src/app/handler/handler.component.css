@@ -1,0 +1,14 @@
+.custom-btn {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.pos-btn {
+    margin: 0px auto;
+    align-items: center;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    left: 42%;
+    top: 0;
+}

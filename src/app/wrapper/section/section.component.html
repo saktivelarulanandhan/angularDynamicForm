@@ -1,0 +1,27 @@
+<div class="card" *ngFor="let section of adminObj.sections">
+    <div class="card-header m-0 p-1 bg-color">
+        <div class="row m-0 p-0">
+            <h5 class="m-0 p-0"> <i class="fa fa-plus-square-o" aria-hidden="true"
+                    [ngClass]="{'fa-plus-square-o': !section.isExpand, 'fa-minus-square-o': section.isExpand}"
+                    (click)="section.isExpand = !section.isExpand"></i> {{getSectionName(section)}}</h5>
+            <h5 class="m-0 p-0 pos-edit" (click)="enableDisplay(section[getSectionName(section)].field)"><i
+                    class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</h5>
+        </div>
+    </div>
+
+    <div class="card-body pl-0 pr-0 pt-0" *ngIf="!section.isExpand">
+        <app-field-header [section]="section"></app-field-header>
+        <ng-container *ngFor="let field of section[getSectionName(section)].field">
+            <app-field [field]="field" [groups]="field.groups"></app-field>
+            <ng-container *ngIf="field.isExpand">
+                <div class="mr-3 ml-3">
+                    <ng-container *ngFor="let child of field.groups">
+                        <app-field [field]="child"></app-field>
+                    </ng-container>
+                    
+                </div>
+            </ng-container>
+        </ng-container>
+
+    </div>
+</div>
