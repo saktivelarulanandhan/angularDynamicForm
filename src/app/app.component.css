@@ -1,0 +1,75 @@
+.bg-color {
+    background-color: #486a94;
+    color: #f2f2f2;
+}
+
+.bg-color > div > h5 {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.bg-color-grid-title {
+    background-color:#dad5d5;
+}
+
+.bg-color-grid-title > div > h6 {
+    font-size: 13px;
+    font-weight: 500;
+    color: #49488a;
+}
+
+.field-label {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.field-element{
+    border: 1px solid #ccc;
+    min-width: 90%;
+    padding: 0px;
+    margin: 0px;
+    font-size: 12px;
+}
+
+.pos-edit {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+
+.custom-square {
+    cursor:pointer;
+}
+
+.custom-field {
+    border-bottom: 0.5px solid #efebeb;
+    box-shadow: 0.5px 0.5px #fff;
+}
+
+.sub-group {
+    border: 1px solid #e6e3e3;
+    box-shadow: 1px 2px #eaeaea;
+}
+
+
+.multiselect-dropdown .dropdown-btn {
+    display: inline-block;
+    border: 1px solid #adadad;
+    width: 90% !important;
+    padding: 3px 8px !important;
+    margin-bottom: 0;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    line-height: 1.1;
+    text-align: left;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border-radius: 4px;
+}
+
+.dropdown-list {
+    width: 90% !important;
+    font-size: 12px;
+    font-weight: 500;
+}
